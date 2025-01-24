@@ -21,7 +21,7 @@
 - Utilizes binary search for quick detection in large datasets of leaked passwords.
 
 ### Password Dataset Included
-- The repository includes a comprehensive dataset of leaked passwords named `Password_Hashes`, which contains entries compiled from various breaches. The following files are part of the dataset:
+- The repository includes a comprehensive dataset of leaked passwords named `Password_Hashes`, which contains entries compiled from various breaches in SHA-1 hashes form. The following files are part of the dataset:
   - `10k-most-common.txt`
   - `10-million-password-list-top-1000000 (1).txt`
   - `100k-most-used-passwords-NCSC.txt`
@@ -52,11 +52,13 @@
 - Python 3.7 or higher
 
 ### Steps
-1. Clone or download this repository.
-2. Ensure the `Password_Hashes` folder with the above files exists in the same directory as the script.
-3. Generate a sorted file of SHA-1 hashes from the dataset using a provided script or hashing tool.
-4. Place the generated `Password_Hashes` file in the same directory as the script.
-5. Run the program using:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/PassStr.git
+   cd PassStr
+   ```
+2. Ensure the `Password_Hashes` folder with the above files exists in the same directory as the script .
+3. Run the program using:
    ```bash
    python PassStr.py
    ```
@@ -104,7 +106,6 @@ Password Strength: Very Strong
 3. **Strength Assessment**:
    - The password’s strength is calculated based on its length, complexity, and character variety.
    - The program provides feedback on the strength level.
-
 
 ---
 
