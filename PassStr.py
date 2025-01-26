@@ -1,5 +1,6 @@
 import hashlib
 import re
+import os
 
 # Function to check password strength
 def check_password_strength(password):
@@ -60,25 +61,39 @@ def binary_search(file_path, target):
         return False
     except FileNotFoundError:
         print(f"Error: File '{file_path}' not found.")
-        return False
+        return None
+    except Exception as e:
+        print(f"Error reading file: {e}")
+        return None
 
 # Main program
 if __name__ == "__main__":
+    # Local file path
+    file_path = "Password_Hashes.txt"
+
     # Prompt user for input
     password = input("Enter the password to check: ").strip()
 
     # Hash the password using SHA-1
     hashed_password = hashlib.sha1(password.encode()).hexdigest()
 
-    # Perform binary search in the sorted file
-    if binary_search("Password_Hashes.txt", hashed_password):
-        print("❌ Password is already leaked (Not Safe).")
+    # Check if the file exists
+    if os.path.exists(file_path):
+        # Perform binary search in the sorted file
+        is_leaked = binary_search(file_path, hashed_password)
+        if is_leaked is True:
+            print("❌ Password is already leaked (Not Safe).")
+            exit()  # Exit the program if the password is leaked
+        elif is_leaked is None:
+            print("⚠️ Skipping leak check due to file error.")
+        else:
+            print("✅ Password not leaked (Safe).")
     else:
-        print("✅ Password not leaked (Safe).")
+        print(f"⚠️ File '{file_path}' not found. Skipping leak check.")
 
-        # Check the score of password strength
-        score = check_password_strength(password)
+    # Check the score of password strength
+    score = check_password_strength(password)
 
-        # Assess and print password strength
-        strength = assess_password_strength(score)
-        print(f"Password Strength: {strength}")
+    # Assess and print password strength
+    strength = assess_password_strength(score)
+    print(f"Password Strength: {strength}")
