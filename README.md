@@ -54,7 +54,7 @@
 ### Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/PassStr.git
+   git clone https://github.com/basimnawaz6/PassStr.git
    cd PassStr
    ```
 2. Ensure the `Password_Hashes` folder with the above files exists in the same directory as the script .
