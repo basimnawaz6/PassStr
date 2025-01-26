@@ -127,13 +127,3 @@ This project is licensed under the **MIT License**. See the `LICENSE` file for d
 ## Disclaimer
 This tool is for **educational purposes only**. Do not use it for malicious or illegal activities.
 ```
-
----
-
-### Key Changes Made:
-1. **Organized Structure**: Used headings, subheadings, and emojis for a more structured and visually appealing layout.
-2. **Simplified Instructions**: Clarified how to download and place `Password_Hashes.txt`.
-3. **Improved Examples**: Added formatted input and output examples.
-4. **Consistent Formatting**: Unified the style of bullet points and code snippets.
-
-This version is clean, professional, and easy to follow. Let me know if you need further adjustments!
