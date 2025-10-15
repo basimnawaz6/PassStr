@@ -119,11 +119,6 @@ Password Strength: Very Strong
 
 ---
 
-## License
-This project is licensed under the **MIT License**. See the `LICENSE` file for details.
-
----
-
 ## Disclaimer
 This tool is for **educational purposes only**. Do not use it for malicious or illegal activities.
 ```
